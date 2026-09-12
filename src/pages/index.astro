@@ -51,37 +51,6 @@ import { site } from '../content';
 
       <section
         class="fade-up fade-up-delay-2 mt-20 border-t border-hairline pt-12 sm:mt-28 sm:pt-16"
-        aria-labelledby="work-heading"
-      >
-        <h2
-          id="work-heading"
-          class="text-xs font-medium tracking-[0.2em] text-ink-faint uppercase"
-        >
-          Selected work
-        </h2>
-        <ul class="mt-8 space-y-10">
-          {
-            site.selectedWork.map((item) => (
-              <li>
-                <p class="text-xs font-medium tracking-[0.16em] text-ink-faint uppercase">
-                  {item.period}
-                  <span class="mx-2 text-zinc-700" aria-hidden="true">
-                    ·
-                  </span>
-                  {item.org}
-                </p>
-                <h3 class="mt-2 text-base font-semibold tracking-tight text-ink">{item.title}</h3>
-                <p class="mt-2 max-w-xl text-[0.95rem] leading-relaxed text-ink-muted">
-                  {item.detail}
-                </p>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
-
-      <section
-        class="fade-up fade-up-delay-3 mt-20 border-t border-hairline pt-12 sm:mt-28 sm:pt-16"
         aria-labelledby="capabilities-heading"
       >
         <h2
