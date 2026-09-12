@@ -89,6 +89,14 @@ import { site } from '../content';
         <div class="min-w-0">
           <p class="font-medium tracking-tight text-ink">{site.name}</p>
           <p class="mt-0.5 text-sm text-ink-muted">{site.shortRole}</p>
+          <p class="mt-2">
+            <a
+              href={`mailto:${site.email}`}
+              class="break-all text-sm text-ink-muted transition-colors hover:text-brand"
+            >
+              {site.email}
+            </a>
+          </p>
           <p class="mt-2 text-sm text-ink-faint">
             {site.location}
             <span class="mx-2 text-zinc-700" aria-hidden="true">·</span>

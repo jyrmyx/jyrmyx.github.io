@@ -28,6 +28,7 @@ test('page ships identity, capabilities, and portrait — not the work draft', (
     '/jyri.jpg',
     'https://fi.linkedin.com/in/jyriilama',
     'https://github.com/jyrmyx',
+    'mailto:jyri.ilama@gmail.com',
   ]) {
     assert.ok(html.includes(needle), `expected to find ${JSON.stringify(needle)}`)
   }
