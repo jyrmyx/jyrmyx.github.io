@@ -9,6 +9,7 @@ export const site = {
     'I help teams ship on AWS: architecture, CI/CD, infrastructure as code, plus the audits and training that make it stick.',
   company: 'iLama Oy',
   location: 'Helsinki',
+  email: 'jyri.ilama@gmail.com',
   year: 2026,
   portrait: {
     src: '/jyri.jpg',
