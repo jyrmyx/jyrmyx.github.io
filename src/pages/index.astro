@@ -51,6 +51,37 @@ import { site } from '../content';
 
       <section
         class="fade-up fade-up-delay-2 mt-20 border-t border-hairline pt-12 sm:mt-28 sm:pt-16"
+        aria-labelledby="work-heading"
+      >
+        <h2
+          id="work-heading"
+          class="text-xs font-medium tracking-[0.2em] text-ink-faint uppercase"
+        >
+          Selected work
+        </h2>
+        <ul class="mt-8 space-y-10">
+          {
+            site.selectedWork.map((item) => (
+              <li>
+                <p class="text-xs font-medium tracking-[0.16em] text-ink-faint uppercase">
+                  {item.period}
+                  <span class="mx-2 text-zinc-700" aria-hidden="true">
+                    ·
+                  </span>
+                  {item.org}
+                </p>
+                <h3 class="mt-2 text-base font-semibold tracking-tight text-ink">{item.title}</h3>
+                <p class="mt-2 max-w-xl text-[0.95rem] leading-relaxed text-ink-muted">
+                  {item.detail}
+                </p>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section
+        class="fade-up fade-up-delay-3 mt-20 border-t border-hairline pt-12 sm:mt-28 sm:pt-16"
         aria-labelledby="capabilities-heading"
       >
         <h2
@@ -61,8 +92,8 @@ import { site } from '../content';
         </h2>
         <ul class="mt-8 grid gap-8 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12">
           {
-            site.capabilities.map((item, index) => (
-              <li class={`fade-up fade-up-delay-${(index % 4) + 1}`}>
+            site.capabilities.map((item) => (
+              <li>
                 <h3 class="text-base font-semibold tracking-tight text-ink">
                   <span class="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-brand align-middle" aria-hidden="true" />
                   {item.title}
@@ -76,15 +107,28 @@ import { site } from '../content';
     </main>
 
     <footer
-      class="fade-up fade-up-delay-3 relative mx-auto max-w-3xl border-t border-hairline px-6 py-8 sm:px-8"
+      class="fade-up fade-up-delay-3 relative mx-auto max-w-3xl border-t border-hairline px-6 py-10 sm:px-8"
     >
-      <p class="text-sm text-ink-faint">
-        {site.location}
-        <span class="mx-2 text-zinc-700" aria-hidden="true">·</span>
-        {site.company}
-        <span class="mx-2 text-zinc-700" aria-hidden="true">·</span>
-        <span>© {site.year}</span>
-      </p>
+      <div class="flex items-center gap-4 sm:gap-5">
+        <img
+          src={site.portrait.src}
+          alt={site.portrait.alt}
+          width={site.portrait.width}
+          height={site.portrait.height}
+          class="h-20 w-20 shrink-0 rounded-full object-cover object-top ring-2 ring-brand/35 sm:h-24 sm:w-24"
+        />
+        <div class="min-w-0">
+          <p class="font-medium tracking-tight text-ink">{site.name}</p>
+          <p class="mt-0.5 text-sm text-ink-muted">{site.shortRole}</p>
+          <p class="mt-2 text-sm text-ink-faint">
+            {site.location}
+            <span class="mx-2 text-zinc-700" aria-hidden="true">·</span>
+            {site.company}
+            <span class="mx-2 text-zinc-700" aria-hidden="true">·</span>
+            <span>© {site.year}</span>
+          </p>
+        </div>
+      </div>
     </footer>
   </div>
 </Layout>
