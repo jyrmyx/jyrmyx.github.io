@@ -50,7 +50,7 @@ export const site = {
     {
       title: 'AI in the work',
       detail:
-        'I use it for almost everything now — architecture, Terraform, pipelines, reviews. Same standards, shorter loop; the model does not get to skip the gates.',
+        'Analysis, code, tests, infra, reviews — the model drafts, the same gates still apply. Faster loops without lowering the bar.',
     },
   ],
 } as const;
