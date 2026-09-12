@@ -29,6 +29,8 @@ test('page ships identity, capabilities, and portrait — not the work draft', (
     'https://fi.linkedin.com/in/jyriilama',
     'https://github.com/jyrmyx',
     'mailto:jyri.ilama@gmail.com',
+    `${new Date().getFullYear() - 2008} years in`,
+    'data-career-start="2008"',
   ]) {
     assert.ok(html.includes(needle), `expected to find ${JSON.stringify(needle)}`)
   }

@@ -7,7 +7,9 @@ interface Props {
   description?: string;
 }
 
-const { title = site.title, description = site.description } = Astro.props;
+const yearsInTheWork = new Date().getFullYear() - site.careerStartYear;
+const { title = site.title, description = `${yearsInTheWork} years in CI, DevOps, and AWS. ${site.description}` } =
+  Astro.props;
 ---
 
 <!doctype html>
