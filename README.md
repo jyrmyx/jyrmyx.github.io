@@ -15,8 +15,11 @@ Production build:
 
 ```bash
 npm run build
+npm test
 npm run preview
 ```
+
+`npm test` is a smoke check of `dist/` (identity, capabilities, portrait, no unpublished selected-work). Run it after a build. CI does the same.
 
 Requires Node.js 22+.
 
