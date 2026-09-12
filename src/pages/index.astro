@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../content';
+---
+
+<Layout>
+  <div class="relative min-h-dvh overflow-x-hidden">
+    <!-- Quiet ambient glow — not a template farm noise overlay -->
+    <div
+      class="pointer-events-none absolute inset-x-0 top-0 h-[42rem] bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,color-mix(in_srgb,#00AA00_14%,transparent),transparent)]"
+      aria-hidden="true"
+    >
+    </div>
+
+    <main id="main" class="relative mx-auto max-w-3xl px-6 pt-20 pb-20 sm:px-8 sm:pt-28 sm:pb-28">
+      <section class="fade-up" aria-labelledby="hero-name">
+        <p class="text-sm font-medium tracking-wide text-brand sm:text-[0.95rem]">
+          {site.role}
+        </p>
+        <h1
+          id="hero-name"
+          class="mt-4 text-[2.15rem] leading-[1.1] font-semibold tracking-tight text-ink sm:text-5xl sm:leading-[1.08]"
+        >
+          {site.name}
+        </h1>
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-ink-muted sm:text-xl sm:leading-relaxed">
+          {site.intro}
+        </p>
+
+        <div class="mt-10 flex flex-wrap items-center gap-4">
+          <a
+            href={site.links.linkedin.href}
+            class="inline-flex min-h-11 items-center justify-center rounded-full bg-brand px-6 text-sm font-semibold text-black transition-[filter,transform] hover:brightness-110 active:scale-[0.98]"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {site.links.linkedin.label}
+            <span class="sr-only"> (opens in a new tab)</span>
+          </a>
+          <a
+            href={site.links.github.href}
+            class="inline-flex min-h-11 items-center justify-center rounded-full border border-hairline bg-transparent px-5 text-sm font-medium text-ink-muted transition-colors hover:border-zinc-600 hover:text-ink"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {site.links.github.label}
+            <span class="sr-only"> (opens in a new tab)</span>
+          </a>
+        </div>
+      </section>
+
+      <section
+        class="fade-up fade-up-delay-2 mt-20 border-t border-hairline pt-12 sm:mt-28 sm:pt-16"
+        aria-labelledby="capabilities-heading"
+      >
+        <h2
+          id="capabilities-heading"
+          class="text-xs font-medium tracking-[0.2em] text-ink-faint uppercase"
+        >
+          Capabilities
+        </h2>
+        <ul class="mt-8 grid gap-8 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12">
+          {
+            site.capabilities.map((item, index) => (
+              <li class={`fade-up fade-up-delay-${(index % 4) + 1}`}>
+                <h3 class="text-base font-semibold tracking-tight text-ink">
+                  <span class="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-brand align-middle" aria-hidden="true" />
+                  {item.title}
+                </h3>
+                <p class="mt-2 text-[0.95rem] leading-relaxed text-ink-muted">{item.detail}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </main>
+
+    <footer
+      class="fade-up fade-up-delay-3 relative mx-auto max-w-3xl border-t border-hairline px-6 py-8 sm:px-8"
+    >
+      <p class="text-sm text-ink-faint">
+        {site.location}
+        <span class="mx-2 text-zinc-700" aria-hidden="true">·</span>
+        {site.company}
+        <span class="mx-2 text-zinc-700" aria-hidden="true">·</span>
+        <span>© {site.year}</span>
+      </p>
+    </footer>
+  </div>
+</Layout>
