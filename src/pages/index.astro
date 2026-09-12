@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { site } from '../content';
+
+const nowYear = new Date().getFullYear();
+const yearsInTheWork = nowYear - site.careerStartYear;
 ---
 
 <Layout>
@@ -24,8 +27,18 @@ import { site } from '../content';
           {site.name}
         </h1>
         <p class="mt-6 max-w-xl text-lg leading-relaxed text-ink-muted sm:text-xl sm:leading-relaxed">
-          {site.intro}
+          <span data-career-years data-career-start={site.careerStartYear}>{yearsInTheWork}</span> years in
+          CI, DevOps, and AWS. {site.intro}
         </p>
+        <script is:inline>
+          (() => {
+            const el = document.querySelector('[data-career-years]');
+            if (!el) return;
+            const start = Number(el.getAttribute('data-career-start'));
+            if (!Number.isFinite(start)) return;
+            el.textContent = String(new Date().getFullYear() - start);
+          })();
+        </script>
 
         <div class="mt-10 flex flex-wrap items-center gap-4">
           <a
@@ -102,7 +115,7 @@ import { site } from '../content';
             <span class="mx-2 text-zinc-700" aria-hidden="true">·</span>
             {site.company}
             <span class="mx-2 text-zinc-700" aria-hidden="true">·</span>
-            <span>© {site.year}</span>
+            <span>© {nowYear}</span>
           </p>
         </div>
       </div>

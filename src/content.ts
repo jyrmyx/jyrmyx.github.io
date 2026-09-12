@@ -7,10 +7,10 @@ export const site = {
   shortRole: 'AWS architect & DevOps',
   intro:
     'I help teams ship on AWS: architecture, CI/CD, infrastructure as code, plus the audits and training that make it stick.',
+  careerStartYear: 2008,
   company: 'iLama Oy',
   location: 'Helsinki',
   email: 'jyri.ilama@gmail.com',
-  year: 2026,
   portrait: {
     src: '/jyri.jpg',
     alt: 'Portrait of Jyri Ilama',
