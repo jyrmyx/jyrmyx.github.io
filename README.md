@@ -32,6 +32,6 @@ All visible copy lives in `src/content.ts`.
 
 ## Design notes
 
-- Body font: [Geist Variable](https://fontsource.org/fonts/geist) via `@fontsource-variable/geist`
+- Body font: [IBM Plex Sans](https://fontsource.org/fonts/ibm-plex-sans) via `@fontsource/ibm-plex-sans`
 - Wordmark: path-outlined SVG (`public/ilama-wordmark.svg`) — rounded handwritten lockup in brand green `#00AA00`, no system-font dependency
 - Motion: CSS-only fade-up on load; respects `prefers-reduced-motion`
