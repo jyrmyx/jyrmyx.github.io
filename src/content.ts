@@ -47,5 +47,10 @@ export const site = {
       detail:
         'GuardDuty, Security Hub, the cleanup nobody scheduled, and training so the team can keep it that way.',
     },
+    {
+      title: 'AI in the work',
+      detail:
+        'I use it for almost everything now — architecture, Terraform, pipelines, reviews. Same standards, shorter loop; the model does not get to skip the gates.',
+    },
   ],
 } as const;
