@@ -27,8 +27,9 @@ const yearsInTheWork = nowYear - site.careerStartYear;
           {site.name}
         </h1>
         <p class="mt-6 max-w-xl text-lg leading-relaxed text-ink-muted sm:text-xl sm:leading-relaxed">
-          <span data-career-years data-career-start={site.careerStartYear}>{yearsInTheWork}</span> years in
-          CI, DevOps, and AWS. {site.intro}
+          {site.intro.replace(/\.$/, '')} — with
+          <span data-career-years data-career-start={site.careerStartYear}>{yearsInTheWork}</span> years of
+          experience.
         </p>
         <script is:inline>
           (() => {
