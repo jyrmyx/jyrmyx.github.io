@@ -8,8 +8,10 @@ interface Props {
 }
 
 const yearsInTheWork = new Date().getFullYear() - site.careerStartYear;
-const { title = site.title, description = `${yearsInTheWork} years in CI, DevOps, and AWS. ${site.description}` } =
-  Astro.props;
+const {
+  title = site.title,
+  description = `${site.intro.replace(/\.$/, '')} — with ${yearsInTheWork} years of experience.`,
+} = Astro.props;
 ---
 
 <!doctype html>
