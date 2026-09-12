@@ -6,8 +6,6 @@ export const site = {
   role: 'Freelance AWS architect and DevOps consultant.',
   intro:
     'I help teams ship on AWS: architecture, CI/CD, infrastructure as code, plus the audits and training that make it stick.',
-  tagline: 'Your DevOps Partner',
-  brand: 'iLama',
   company: 'iLama Oy',
   location: 'Helsinki',
   year: 2026,

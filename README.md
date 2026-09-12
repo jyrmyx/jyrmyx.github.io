@@ -33,5 +33,4 @@ All visible copy lives in `src/content.ts`.
 ## Design notes
 
 - Body font: [IBM Plex Sans](https://fontsource.org/fonts/ibm-plex-sans) via `@fontsource/ibm-plex-sans`
-- Wordmark: path-outlined SVG (`public/ilama-wordmark.svg`) of **iLama.dev** in Chalkboard SE Regular, brand green `#00AA00` — same lockup as the original page, no live font dependency
 - Motion: CSS-only fade-up on load; respects `prefers-reduced-motion`
