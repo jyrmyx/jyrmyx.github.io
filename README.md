@@ -29,6 +29,8 @@ This repo is intended for the user site [`jyrmyx/jyrmyx.github.io`](https://gith
 
 Merging to `main` runs the GitHub Actions workflow (`.github/workflows/deploy.yml`), which builds the Astro site and deploys with `actions/deploy-pages`. Enable GitHub Pages with **Source: GitHub Actions** in the repository settings.
 
+`main` is protected: changes go through a pull request, the CI `build` job (install, `astro build`, smoke tests) must pass, the branch must be up to date, and force-pushes or deleting `main` are blocked. No approving review is required (solo repo).
+
 Dependabot opens weekly grouped PRs for npm and GitHub Actions. CI builds each PR; Dependabot PRs squash-merge themselves after a green build.
 
 ## Content
