@@ -1,0 +1,16 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<img
+  src="/ilama-wordmark.svg"
+  alt="iLama"
+  width="164"
+  height="109"
+  class:list={['block h-auto w-auto select-none', className]}
+  decoding="async"
+/>

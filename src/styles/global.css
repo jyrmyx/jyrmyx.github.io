@@ -1,0 +1,89 @@
+@import 'tailwindcss';
+@import '@fontsource/ibm-plex-sans/latin-400.css';
+@import '@fontsource/ibm-plex-sans/latin-500.css';
+@import '@fontsource/ibm-plex-sans/latin-600.css';
+
+@theme {
+  --color-brand: #00aa00;
+  --color-brand-muted: color-mix(in srgb, #00aa00 70%, black);
+  --color-ink: #f4f4f5;
+  --color-ink-muted: #a1a1aa;
+  --color-ink-faint: #71717a;
+  --color-surface: #050505;
+  --color-surface-raised: #0c0c0c;
+  --color-hairline: #1a1a1a;
+  --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-surface text-ink antialiased font-sans;
+    min-height: 100dvh;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, #00aa00 35%, transparent);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 3px;
+  }
+
+  a:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+@layer utilities {
+  .fade-up {
+    animation: fade-up 0.7s ease-out both;
+  }
+
+  .fade-up-delay-1 {
+    animation-delay: 0.08s;
+  }
+
+  .fade-up-delay-2 {
+    animation-delay: 0.16s;
+  }
+
+  .fade-up-delay-3 {
+    animation-delay: 0.24s;
+  }
+
+  .fade-up-delay-4 {
+    animation-delay: 0.32s;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
